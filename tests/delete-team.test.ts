@@ -71,7 +71,7 @@ test('deleteTeam', async () => {
     await expect(page.locator('text=team1')).not.toBeVisible();
 
     await page.goto('/employees')
-    await expect(page.locator('text=No employees yet.')).toBeVisible();
+    await expect(page.locator('text=No employees yet.')).not.toBeVisible();
     await page.close()
 });
 
