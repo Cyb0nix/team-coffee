@@ -1,4 +1,5 @@
 import {test, chromium, Page, expect} from '@playwright/test';
+import {ResetDatabasePage} from "./pages/reset-database-page";
 
 
 async function resetDatabase(page: Page) {
@@ -56,6 +57,11 @@ test.beforeEach(async ({ page }) => {
 test('deleteTeam', async () => {
     const browser = await chromium.launch( {headless: false} )
     const page = await browser.newPage()
+    const resetDatabasePage = new ResetDatabasePage(page)
+    resetDatabasePage.goto()
+    resetDatabasePage..resetDatabase()
+
+    
     await addUser(page);
     await createTeam(page, 'team1')
     await addUserToTeam(page, 'team1')
