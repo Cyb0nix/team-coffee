@@ -58,8 +58,8 @@ test('deleteTeam', async () => {
     const browser = await chromium.launch( {headless: false} )
     const page = await browser.newPage()
     const resetDatabasePage = new ResetDatabasePage(page)
-    resetDatabasePage.goto()
-    resetDatabasePage..resetDatabase()
+    await resetDatabasePage.goto()
+    await resetDatabasePage.resetDatabase()
 
 
     await addUser(page);
