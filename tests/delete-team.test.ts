@@ -61,7 +61,7 @@ test('deleteTeam', async () => {
     resetDatabasePage.goto()
     resetDatabasePage..resetDatabase()
 
-    
+
     await addUser(page);
     await createTeam(page, 'team1')
     await addUserToTeam(page, 'team1')
